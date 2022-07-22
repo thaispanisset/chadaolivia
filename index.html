@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Sorteio do Chá da Olívia</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/661e1f76f6.js" crossorigin="anonymous"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="logo">
+                <img src="logocha.png" alt="Chá da Olívia">
+            </div>
+            <div class="estatisticas">
+                <div class="participantes">
+                    <i class="fa-solid fa-user"></i>
+                    <div>
+                        <h4 id="pessoasCount">0</h4>
+                        <p>Participantes</p>
+                    </div>
+                </div>
+                <div class="total">
+                    <i class="fa-solid fa-list-ul"></i>
+                    <div>
+                        <h4 id="rifasCount">0</h4>
+                        <p>Números no Totais</p>
+                    </div>
+                </div>
+                <div class="vendidos">
+                    <i class="fa-solid fa-list-check"></i>
+                    <div>
+                        <h4 id="rifasCount2">0</h4>
+                        <p>Números Vendidos</p>
+                    </div>
+                </div>
+            </div>
+            <div class="resultado">
+                <h1 id="numero">0</h1>
+                <h2 id="nome">Nome do Sorteado</h2>
+            </div>
+            <div class="sorteio">
+                <button onClick="sortear()">Sortear</button>
+            </div>
+        </div>
+
+        <script>
+            let pessoas = 0
+
+            const interval = setInterval(() => {
+
+            // just for presentation
+            document.getElementById('pessoasCount').innerHTML = pessoas
+
+            // time is up
+            if (pessoas === 99) {
+                clearInterval(interval);
+            }
+
+            pessoas++;
+            }, 40);
+
+            let rifas = 0
+
+            const intervalo = setInterval(() => {
+
+            // just for presentation
+            document.getElementById('rifasCount').innerHTML = rifas
+            document.getElementById('rifasCount2').innerHTML = rifas
+
+            // time is up
+            if (rifas === 150) {
+                clearInterval(intervalo);
+            }
+
+            rifas++;
+            }, 25);
+        </script>
+
+        <script type="text/javascript" src="script.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    </body>
+</html>
